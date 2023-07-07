@@ -41,8 +41,9 @@ class DuckDuckGoSearchPage:
         suggestions_text = [suggestion.text for suggestion in suggestions]
         return suggestions_text
 
+
+    def store_suggested_search_phrase(self):
+        return self.f_auto_complete_suggestions()[1].text
+
     def select_auto_complete_suggestion(self):
-        phrase = self.f_auto_complete_suggestions()[1].text
         self.f_auto_complete_suggestions()[1].click()
-        print(phrase)
-        return phrase
