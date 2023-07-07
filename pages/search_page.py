@@ -8,7 +8,7 @@ class DuckDuckGoSearchPage:
     url = 'https://www.duckduckgo.com'
 
     # locators
-    search_input_field = (By.ID, 'searchbox_input')
+    search_input_field = (By.NAME, 'q')
     search_button = (By.CSS_SELECTOR, 'button[aria-label="Search"]')
     auto_complete_suggestions = (By.CSS_SELECTOR, 'li.searchbox_suggestion__csrUQ')
 
