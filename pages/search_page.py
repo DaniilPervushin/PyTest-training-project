@@ -27,14 +27,22 @@ class DuckDuckGoSearchPage:
     def duckduckgo_home_page_load(self):
         self.browser.get(self.url)
 
-    def search_using_keys(self, phrase):
-        self.f_input_field().send_keys(phrase + Keys.RETURN)
-
-    def search_using_button(self, phrase):
+    def send_keys_into_search_field(self, phrase):
         self.f_input_field().send_keys(phrase)
+
+    def search_using_keys(self):
+        self.f_input_field().send_keys(Keys.RETURN)
+
+    def search_using_button(self):
         self.f_search_button().click()
 
     def auto_complete_content(self):
         suggestions = self.f_auto_complete_suggestions()
         suggestions_text = [suggestion.text for suggestion in suggestions]
         return suggestions_text
+
+    def select_auto_complete_suggestion(self):
+        phrase = self.f_auto_complete_suggestions()[1].text
+        self.f_auto_complete_suggestions()[1].click()
+        print(phrase)
+        return phrase
