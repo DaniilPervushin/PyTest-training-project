@@ -10,4 +10,6 @@ def browser():
     b.implicitly_wait(10)
 
     yield b
+
     b.quit()
+
