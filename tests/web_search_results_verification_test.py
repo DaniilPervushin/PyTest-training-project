@@ -118,5 +118,5 @@ def test_change_search_term_on_result_page_from_suggested_search_term_list(brows
     suggested_search_term = result_page.store_suggested_search_phrase(new_phrase)
     print(suggested_search_term)
     result_page.select_auto_complete_suggestion()
-    assert len([t for t in result_page.f_result_link_titles() if suggested_search_term.lower() in t.lower()]) > 0
+    assert len([t for t in result_page.f_result_link_titles() if new_phrase.lower() in t.lower()]) > 0
 
