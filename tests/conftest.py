@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 @pytest.fixture
 def browser():
-    b = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    b = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=webdriver.ChromeOptions().add_argument('headless'))
     b.maximize_window()
     b.implicitly_wait(10)
 
