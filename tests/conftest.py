@@ -1,4 +1,5 @@
 import pytest
+import pytest_html
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -8,6 +9,7 @@ def browser():
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     b = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+    # b = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     b.maximize_window()
     b.implicitly_wait(10)
 

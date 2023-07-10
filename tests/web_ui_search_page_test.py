@@ -11,6 +11,7 @@ phrases =[
 ]
 
 @pytest.mark.parametrize('phrase', phrases)
+@pytest.mark.searchpage
 def test_auto_complete_suggestions_contain_search_phrase(browser, phrase ):
     search_page = DuckDuckGoSearchPage(browser)
     search_page.duckduckgo_home_page_load()
